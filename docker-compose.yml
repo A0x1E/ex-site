@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  server:
+    image: ex-site-server
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+
+  client:
+    image: ex-site-client
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+
+  common:
+    image: ex-site-common
+    build:
+      context: ./common
+      dockerfile: Dockerfile
